@@ -23,27 +23,31 @@ function App() {
 		);
 		fetchPhoto();
 		async function fetchPhoto() {
+			//fetch photo from api
 			try {
 				const res = await fetch(url);
 				const data = await res.json();
-				setPhotoData(data);
+				//set timeout to re render with new photo data
+				setTimeout(() => {
+					setPhotoData(data);
+				}, 500);
 			} catch (err) {
 				console.error(err);
 			}
 		}
-		console.log(url);
 	}, [rover, date, camera, url]);
 
 	//change rover
 	const changeRover = (text) => {
 		setRover(text);
-		console.log(rover);
 	};
 
 	//change date
 	const changeDate = (text) => {
+		//parse the date in text and set the new date
 		var year = parseInt(date.substring(0, 4));
 		var month;
+		// split by '-' character
 		date.charAt(6) === "-"
 			? (month = parseInt(date.charAt(5)))
 			: (month = parseInt(date.substring(5, 7)));
@@ -52,6 +56,7 @@ function App() {
 			? (day = parseInt(date.charAt(7)))
 			: (day = parseInt(date.substring(7, 9)));
 
+		//increment date correctly
 		if (month > 12) {
 			month = 1;
 			year += 1;
@@ -64,18 +69,15 @@ function App() {
 		} else {
 			newDay.setDate(currDay.getDate() - 1);
 		}
-
 		year = newDay.getFullYear();
 		month = newDay.getMonth();
 		day = newDay.getDate();
 		setDate(year + "-" + month + "-" + day);
-		console.log(date);
 	};
 
 	//change camera
 	const changeCamera = (text) => {
 		text === "front hazard camera" ? setCamera("rhaz") : setCamera("fhaz");
-		console.log(camera);
 	};
 
 	if (!photoData) return <div>error</div>;
