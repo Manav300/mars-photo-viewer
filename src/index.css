@@ -1,8 +1,7 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  background-color: rgb(13, 35, 49);
+  font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +9,91 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.title {
+  color: rgb(199, 154, 31);
+  text-align: center;
+}
+
+.description {
+  color: rgb(199, 154, 31);
+  text-align: center;
+}
+
+.image {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 3px solid white;
+}
+
+.rover-photo {
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  display: grid;
+  place-items: center;
+  padding: 2%;
+}
+
+.rover-photo h2{
+  margin: 5px;
+}
+
+.btn {
+  display: inline;
+  padding: 10px 10px 10px 10px;
+  margin: 0 10px 0 10px;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+  background-color: rgb(199, 154, 31);
+  border-radius: 10px;
+  border: 2px solid white;
+  font-weight: bold;
+  transition: 0.2s ease;
+}
+
+.btn:hover {
+  background-color: rgb(173, 116, 9);
+}
+
+.btn:active {
+  background-color: rgb(122, 82, 7);
+}
+
+
+.menu {
+  padding: 5px 20%;
+  color: white;
+  display: grid;
+  place-items: center;
+}
+
+.date-text {
+  display: inline;
+  color: white;
+}
+
+.rover-menu {
+  padding: 10px 10px;
+}
+
+.date-menu {
+  padding: 10px 10px;
+}
+
+.camera-menu {
+  padding: 10px 10px;
+}
+
+.footer {
+  background-color: rgb(173, 116, 9);
+  padding: 20px;
+}
+.footer p{
+  margin: 0;
 }
